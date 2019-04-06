@@ -30,6 +30,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
+"Plugin 'bitc/vim-bad-whitespace'
 
 " Follow YCM installation instruction at
 " https://github.com/Valloric/YouCompleteMe#linux-64-bit
@@ -70,20 +71,23 @@ nnoremap <space> za
 " TIP: To add the proper PEP 8 indentation
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=72 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix |
-    \ set shiftwidth=4
+    \ set tabstop=4 |       " a hard TAB displays as 4 columns
+    \ set softtabstop=4 |   " insert/delete 4 spaces when TAB/BACKSPACE
+    \ set shiftwidth=4 |    " operation >> indents 4 columns; << unindents 4
+    \ set textwidth=79 |    " lines longer than 79 columns will be broken
+    \ set expandtab |       " insert spaces when hitting TABs
+    \ set autoindent |      " align the new line indent with the previous line
+    \ set shiftround |      " round indent to multiple of 'shiftwidth'
+    \ set fileformat=unix 
 
 """""""""""""""""""""""""""""""""""""""""""
 " TIP: Flagging Unnecessary Whitespace
 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
+"highlight BadWhitespace ctermbg=red guibg=darkred
+"highlight BadWhitespace ctermfg=16 ctermbg=253 guifg=#000000 guibg=#F8F8F0
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match Cursor /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw match Cursor /^\s*\t\+/
 
 
 """""""""""""""""""""""""""""""""""""""""""
