@@ -127,6 +127,27 @@ endfunction
 
 au! BufNewFile,BufRead *.sh call s:FuncShell()
 
+
+"""""""""""""""""""""""""""""""""""""""""""
+" TIP: .md .markdown support
+
+function s:FuncMarkdown() 
+    setlocal textwidth=79     " lines longer than 79 columns will be broken
+    setlocal colorcolumn=80
+    setlocal filetype=markdown
+    syntax on 
+endfunction
+
+augroup g_markdown 		" :help augroup for examples
+    au!
+
+    highlight mdParagraphWhitespace ctermbg=DarkRed guibg=DarkRed " :help cterm-colors
+    au BufNewFile,BufRead *.md,*.markdown match mdParagraphWhitespace /\s\s\+$/
+
+    au BufNewFile,BufRead *.md,*.markdown call s:FuncMarkdown()
+augroup END
+
+
 """""""""""""""""""""""""""""""""""""""""""
 " TIP: Python support
 
@@ -164,19 +185,6 @@ au! BufNewFile,BufRead *.py,*.pyw call s:FuncPython()
 
 " python: enable all Python syntax highlighting features
 let python_highlight_all = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""
-" TIP: .md markdown syntax support
-"
-":help augroup
-augroup markdown
-    au!
-    au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-augroup END
-
-syntax on
-
 
 
 """""""""""""""""""""""""""""""""""""""""""
