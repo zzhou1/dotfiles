@@ -117,6 +117,15 @@ else
   colorscheme zenburn
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""
+" TIP: SHELL support
+
+function s:FuncShell() 
+    setlocal textwidth=79     " lines longer than 79 columns will be broken
+    setlocal colorcolumn=80
+endfunction
+
+au! BufNewFile,BufRead *.sh call s:FuncShell()
 
 """""""""""""""""""""""""""""""""""""""""""
 " TIP: Python support
