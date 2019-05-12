@@ -3,7 +3,10 @@
 #screen, with the time and date and with the current window highlighted                                                                            
 hardstatus alwayslastline
 #hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+hardstatus string '%{= kG}[%{G}%H%{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d%{g}]'
+
+defscrollback 100000
 
 multiuser on
 acladd root
@@ -13,3 +16,10 @@ termcapinfo gnome* ti@:te@
 
 defc1 off
 defutf8 on
+
+screen -t
+screen -t
+screen -t
+screen -t
+screen -t
+
