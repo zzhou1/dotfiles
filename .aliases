@@ -1,3 +1,10 @@
+# for SUSE  
+alias iosc='osc -A https://api.suse.de'
+alias isc='osc -A https://api.suse.de'
+
+# 
+alias cp='cp --reflink=auto'
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
