@@ -3,6 +3,8 @@ alias iosc='osc -A https://api.suse.de'
 alias isc='osc -A https://api.suse.de'
 alias aosc='osc -A https://api.suse.asia'
 alias asc='osc -A https://api.suse.asia'
+alias oscb="osc build --ccache"
+alias oscsd="osc service localrun download_files"
 
 # 
 alias cp='cp --reflink=auto'
