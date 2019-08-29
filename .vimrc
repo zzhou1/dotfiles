@@ -59,6 +59,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'jnurmine/Zenburn'			" dark theme for eye health
 Plugin 'altercation/vim-colors-solarized'	" dark theme for eye health
 Plugin 'nvie/vim-flake8'			" PEP8 checker
+Plugin 'chazy/cscope_maps'
 "Plugin 'bitc/vim-bad-whitespace'
 
 " Follow YCM installation instruction at
