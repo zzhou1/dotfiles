@@ -200,6 +200,26 @@ else
 endif
 
 
+"""""""""""""""""""""""""""""""""""""""""""                                 
+" TIP: modify printing properties in gvim
+"
+
+" To disable header
+"set printoptions+=header:0
+
+set printexpr=PrintFile(v:fname_in)
+function PrintFile(fname)
+
+	" Intentionally disable printing, eg. to avoid mouse clicks blindly
+	call delete(a:fname)
+	return v:shell_error
+
+	" lp works well for cups system
+	call system("lp " . a:fname)
+
+	call delete(a:fname)
+	return v:shell_error
+endfunc
 
 
 
