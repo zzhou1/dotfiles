@@ -72,6 +72,8 @@ Plugin 'jnurmine/Zenburn'			" dark theme for eye health
 Plugin 'altercation/vim-colors-solarized'	" dark theme for eye health
 Plugin 'nvie/vim-flake8'			" PEP8 checker
 Plugin 'chazy/cscope_maps'
+Plugin 'vim-scripts/taglist.vim'
+
 "Plugin 'bitc/vim-bad-whitespace'
 
 " Follow YCM installation instruction at
@@ -235,7 +237,36 @@ endfunc
 
 
 
+"""""""""""""""""""""""""""""""""""""""""""                                 
+" TIP: auto-load cscope.out
+"
+" Highlights: very useful to read !!!
+" https://github.com/chazy/cscope_maps/blob/master/plugin/cscope_maps.vim
+"
+" . General cscope KEYs
+"
+"   a: 查找 C symbol assignments 符号赋值出现的地方
+"
+"   s: 查找 C symbol(函数、宏、枚举等)出现的地方
+"   g: 查找 C symbol(函数、宏、枚举等)定义的位置
+"   d: 查找 func definition 本函数调用的函数
+"   c: 查找 func caller, 调用本函数的函数
+"   t: text  查找指定的字符串
+"   e: egrep 类似功能，但查找速度快多了
+"   f: file  查找并打开文件，类似 vim 的 find 功能
+"   i: include	查找包含本文件的文件
 
+" . Examples
+"   <C-t>: 	to go back to where you were before search
+"   <C-\>s: 	use the current window for the search result
+"   <C-]>s: 	new horizontal window split
+"   <C-]><C-]>s:	new vertical window split
+"
+" . By default Vim will wait 1s for each keystroke in a mapping
+"   You may want to change mapping timeouts via 
+"   .. to turn off: set notimeout
+"   .. or, differnt miliseconds: set timeoutlen=4000
+       set timeoutlen=4000
 
 
 
