@@ -20,6 +20,18 @@ set autoindent		" ai 自动缩进 ( works very good with gqap/gq} )
 set formatoptions=tcqn 	" :help formatoptions
 
 
+" Temprary backup file: *~
+" Temprory swap files: *.sw[a-z]
+" undo files: *.udf
+"
+set backupdir=~/.vim/.backup,.,/tmp
+set directory=~/.vim/.backup,.,/tmp
+"set udf
+set udir=~/.vim/.backup,.,/tmp
+set backupcopy=yes
+set noswapfile
+autocmd BufNewFile,BufRead {$HOME/Dropbox/*} setlocal noswapfile | let b:NoSwapSuck_NoSwapfile = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""
 " TIP: vim Plugin manager - Vundle
