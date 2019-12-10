@@ -1,3 +1,6 @@
+set ignorecase
+set spell
+set spellfile=~/.vim/spell/en.utf-8.add
 
 """""""""""""""""""""""""""""""""""""""""""
 " TIP: global visual highlighting
@@ -147,8 +150,10 @@ au! BufNewFile,BufRead *.sh call s:FuncShell()
 " TIP: .md .markdown support
 
 function s:FuncMarkdown() 
-    setlocal textwidth=79     " lines longer than 79 columns will be broken
-    setlocal colorcolumn=80
+"    setlocal textwidth=79     " lines longer than 79 columns will be broken
+"    setlocal colorcolumn=80
+    setlocal textwidth=72     " To compromise with Thunderbird composer
+    setlocal colorcolumn=73
     setlocal filetype=markdown
     syntax on 
 endfunction
@@ -224,7 +229,7 @@ endif
 set printexpr=PrintFile(v:fname_in)
 function PrintFile(fname)
 
-	" Intentionally disable printing, eg. to avoid mouse clicks blindly
+	" to avoid printing due to unintentional mouse click errors of human
 	call delete(a:fname)
 	return v:shell_error
 
