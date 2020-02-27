@@ -141,6 +141,12 @@ endif
 function s:FuncShell() 
     setlocal textwidth=79     " lines longer than 79 columns will be broken
     setlocal colorcolumn=80
+    setlocal softtabstop=4    " insert/delete 4 spaces when TAB/BACKSPACE
+    setlocal shiftwidth=4     " operation >> indents 4 columns; << unindents 4
+    setlocal expandtab        " insert spaces when hitting TABs
+    setlocal autoindent       " align the new line indent with the previous line
+    setlocal shiftround       " round indent to multiple of 'shiftwidth'
+    setlocal fileformat=unix 
 endfunction
 
 au! BufNewFile,BufRead *.sh call s:FuncShell()
